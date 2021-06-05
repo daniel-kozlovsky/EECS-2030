@@ -1,0 +1,53 @@
+package application;
+
+import java.util.Scanner;
+
+import implementation.Person;
+
+public class BMICalculator2 {
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Calculate your Body Mass Index");
+		boolean userWantsToContinue = true;
+		while (userWantsToContinue) {
+			System.out.println("What is your name?");
+			String name = input.nextLine();
+
+			System.out.println("Complete the form to determine your Body Mass Index");
+
+			System.out.println("What is your weight in kg?");
+			double weight = input.nextDouble();
+			input.nextLine();
+
+			System.out.println("What is your height in cm?");
+			double height = input.nextDouble();
+			input.nextLine();
+
+			Person p = new Person(name, weight, height);
+			double bmi = p.getBMI();
+			System.out.print(p.getName() + ", ");
+			System.out.print(" your Body Mass Index is " + bmi + ".");
+			System.out.print(" This is considered ");
+			String status = "";
+			if (bmi < 18.5) {
+				status = "underweight";
+			} else if (18.5 <= bmi && bmi < 25.0) {
+				status = "normal";
+			} else if (25.0 <= bmi && bmi < 30.0) {
+				status = "overweight";
+			} else {
+				status = "obese";
+			}
+			System.out.println(status + ".");
+
+			System.out.println("Do you want to continue?(Y/N)");
+			String answer = input.nextLine();
+			if (answer.equals("N")) {
+				userWantsToContinue = false;
+			}
+		}
+		System.out.println("Bye!");
+	}
+}

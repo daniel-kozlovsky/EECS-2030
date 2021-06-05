@@ -1,0 +1,39 @@
+package implementation;
+
+public class Person {
+	private String name;
+	private double weight; // in kilograms
+	private double height; // in meters
+	
+	public Person(String n, double w, double h) {
+		name = n;
+		weight = w;
+		height = h;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public double getWeight() {
+		return weight;
+	}
+	
+	public double getHeight() {
+		return height;
+	}
+	
+	public double getBMI() {
+		double bmi = weight / (height * height);
+		bmi = Math.round(bmi * 10);
+		return bmi / 10.;
+	}
+	
+	public void setWeight(double w) {
+		weight = w;
+	}
+	
+	public void setHeight(double h) {
+		height = h;
+	}
+}

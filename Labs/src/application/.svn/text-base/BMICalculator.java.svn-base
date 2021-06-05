@@ -1,0 +1,28 @@
+package application;
+
+import implementation.Person;
+
+public class BMICalculator {
+	public static void main(String[] args) {
+		System.out.println("(1)------------------------------");
+		Person p1 = new Person("Jim", 97, 1.71);
+		System.out.print("Person " + p1.getName());
+		System.out.print(" with weight " + p1.getWeight());
+		System.out.print(" and height " + p1.getHeight());
+		System.out.println(" has BMI " + p1.getBMI());
+		
+		System.out.println(); /* empty line */
+
+		System.out.println("(2)------------------------------");
+		p1.setWeight(p1.getWeight() + 10);
+		System.out.println(p1.getName() + "'s BMI has increased after gaining 10 kilograms...");
+		System.out.println("His BMI is now " + p1.getBMI());
+		
+		System.out.println(); /* empty line */
+		
+		System.out.println("(3)------------------------------");
+		p1.setHeight(p1.getHeight() + 0.05);
+		System.out.println(p1.getName() + "'s BMI has decreased after growing taller for 5 cm...");
+		System.out.println("His BMI is now " + p1.getBMI());
+	}
+}

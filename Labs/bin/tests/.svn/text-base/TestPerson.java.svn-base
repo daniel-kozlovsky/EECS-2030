@@ -1,0 +1,32 @@
+package tests;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+import implementation.Person;
+
+public class TestPerson {
+
+	@Test
+	public void testPerson() {
+		Person p = new Person("Jim", 97, 1.71);
+		assertTrue(p.getName().equals("Jim"));
+		assertTrue(p.getWeight() == 97);
+		assertTrue(p.getHeight() == 1.71);
+		assertTrue(p.getBMI() == 33.2);
+		
+		p.setWeight(p.getWeight() + 10);
+		assertTrue(p.getName().equals("Jim"));
+		assertTrue(p.getWeight() == 107);
+		assertTrue(p.getHeight() == 1.71);
+		assertTrue(p.getBMI() == 36.6);
+		
+		p.setHeight(p.getHeight() + 0.05);
+		assertTrue(p.getName().equals("Jim"));
+		assertTrue(p.getWeight() == 107);
+		assertTrue(p.getHeight() == 1.76);
+		assertTrue(p.getBMI() == 34.5);
+		
+		assertTrue(p.getBMI() == 34.5);
+	}
+
+}
